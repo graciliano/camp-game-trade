@@ -1,0 +1,54 @@
+<!-- <cdk-virtual-scroll-viewport itemSize="50" class="example-viewport"> -->
+  <section>
+    <div class="containerHome" fxFlexFill fxLayout="column" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="5%" fxLayoutAlign="top center">
+      <div class="box" fxLayoutAlign="center center" fxLayout="column">
+        <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="5%" class="mat-display-1">
+          <label class="treinadorName">{{treinador[0].nome}}</label>
+          <div class="patrocinioCard" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="5%">
+            <h2 class="mat-display-2 playerNameCard">{{treinador[0].valor}}</h2>
+            <h2 class="mat-display-1 playerNameCard">Nível {{treinador[0].nivel}}</h2>
+            <h3>Salário: {{treinador[0].salario}}e</h3>
+            <!-- <label class="">13/50</label> -->
+          </div>
+          <label class="treinadorName">Clube</label>
+          <div class="patrocinioCard" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="5%">
+            <img class="playerFoto" src="{{treinador[0].clube.imagem}}">
+            <h2 class="mat-display-1 playerNameCard">{{treinador[0].clube.name}}</h2>
+            <h3>Nível {{treinador[0].clube.nivel}}</h3>
+            <label class="">{{treinador[0].clube.valor}}e</label>
+          </div>
+          <label class="treinadorName">Patrocínio</label>
+          <div class="patrocinioCard" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="5%">
+            <h2 class="mat-display-1 playerNameCard">{{treinador[0].clube.patrocinio.nome}}</h2>
+            <h4>{{treinador[0].clube.patrocinio.objetivo}}</h4>
+            <label class="">{{treinador[0].clube.patrocinio.valor}} e</label>
+          </div>
+          <label class="treinadorName">Jogadores</label>
+          <!-- Card dos jogadores -->
+          <div *ngFor="let player of players" class="patrocinioCard" fxLayout="column" fxLayoutGap="7%">
+            <h2 class="mat-display-1 playerNameCard">{{player.common_name}}</h2>
+            <mat-divider></mat-divider>
+            <div fxLayout fxLayoutGap="5%">
+              <img class="playerFoto" src="{{player.last_name}}">
+              <div fxLayout="column">
+                <label class="atributePlayer">Overall: </label>
+                <label class="atributePlayer">Valor: </label>
+                <label class="atributePlayer">Posição: </label>
+              </div>
+              <div fxLayout="column">
+                <label class="atributePlayer">{{player.rating}}</label> 
+                <label class="atributePlayer">{{player.fut_wiz_id}}e</label>
+                <label class="atributePlayer">{{player.position}}</label>
+              </div>
+            </div>
+            <label class="atributePlayer">Salário Jogador: {{player.club}}e</label>
+            <label class="atributePlayer">Contrato: {{player.total_stats_in_game}} temporada(s)</label>
+            <mat-divider></mat-divider>
+            <button mat-raised-button color="warn" [disabled]="player.tradeable" (click)="colocarAvenda(player)">Colocar à Venda</button>
+            <button mat-raised-button color="warn" [disabled]="!player.attack_work_rate" (click)="renovarContrato(player)">Renovar Contrato</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+<!-- </cdk-virtual-scroll-viewport> -->

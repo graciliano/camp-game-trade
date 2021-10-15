@@ -1,0 +1,32 @@
+<section>
+  <div class="containerHome" fxFlexFill fxLayout="column" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="5%" fxLayoutAlign="top center">
+    <div class="box" fxLayoutAlign="center center" fxLayout="column">
+      <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="5%" class="mat-display-1">
+        <label class="treinadorName">Propostas Clubes</label>
+        <!-- Card dos jogadores -->
+        <div *ngFor="let clube of clubes" class="patrocinioCard" fxLayout="column" fxLayoutGap="7%">
+          <h2 class="mat-display-1 playerNameCard">{{clube.name}}</h2>
+          <mat-divider></mat-divider>
+          <div fxLayout="column" fxLayoutGap="5%">
+            <div fxLayout="column" fxLayoutAlign="center center">
+              <img class="playerFoto" src="{{clube.imagem}}">
+            </div>
+            <div fxLayout="column">
+              <label class="atributePlayer">Nível: {{clube.nivel}}</label> 
+              <label class="atributePlayer">Valor clube: {{clube.valor}}e</label> 
+              <label class="atributePlayer">Patrocínio:</label> 
+              <label class="atributePlayer"><b>{{clube.patrocinio.nome}}</b></label>
+              <label class="atributePlayer">Objetivo: {{clube.patrocinio.objetivo}}</label>
+              <label class="atributePlayer">Valor patrocinio: {{clube.patrocinio.valor}}e</label>
+            </div>
+          </div>
+          <mat-divider></mat-divider>
+          <button mat-raised-button color="warn" (click)="aceitarContrato(
+            clube, clube.patrocinio, treinador[0]
+          )">Aceitar contrato {{clube.valor + clube.patrocinio.valor}}</button>
+        </div>
+      <button class="menuButton" type="submit" mat-raised-button (click)="logOut()">Sair</button>
+      </div>
+    </div>
+  </div>
+</section>

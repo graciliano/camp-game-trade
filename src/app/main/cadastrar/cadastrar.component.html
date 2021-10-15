@@ -1,0 +1,39 @@
+<section class="section">
+  <div class="containerHome" fxLayout="column" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="5%" fxLayoutAlign="top center">
+    <div class="box" fxLayoutAlign="center center" fxLayout="column">
+      <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="5%" class="mat-display-1 treinadorName">
+        <label>Atualizações</label>
+      </div>
+    </div>  
+  </div>
+  <div fxLayout="column" fxLayout.xs="column" fxLayoutWrap fxLayoutAlign="top center" style="background-color: white;">
+    <form [formGroup]="cadastraForm">
+      <label style="color: black">Cadastrar Jogador</label>
+      <div fxLayoutAlign="right" fxLayout="column" style="padding-top: 10px; padding-bottom: 10px;">
+          <mat-form-field appearance="outline" style="color: black">
+          <mat-label>ID</mat-label>
+          <input matInput formControlName="id">
+        </mat-form-field>
+        <mat-form-field appearance="outline" style="color: black">
+          <mat-label>Nome</mat-label>
+          <input matInput formControlName="nome">
+        </mat-form-field>
+        <mat-form-field appearance="outline" style="color: black">
+          <mat-label>Posição</mat-label>
+          <input matInput formControlName="posicao">
+        </mat-form-field>
+        <mat-form-field appearance="outline" style="color: black">
+          <mat-label>Overall</mat-label>
+          <input matInput formControlName="overall">
+        </mat-form-field>
+        <button mat-raised-button color="primary" [disabled]="!cadastraForm.valid" (click)="cadastraPlayer(cadastraForm)">Cadastrar Jogador</button>
+      </div>
+    </form>
+  </div>
+  <div fxLayout="column" fxLayout.xs="column" fxLayoutWrap fxLayoutAlign="top center" style="background-color: white;">
+    <label style="color: black">Zerar falhas de Tentativas de contratar</label>
+    <button mat-raised-button color="primary" (click)="atualizaTentativasJanela()">Atualizar Chances Janela</button>
+    <button mat-raised-button color="primary" (click)="arraySize()">Array Size</button>
+    <!-- <button class="menuButton" type="submit" mat-raised-button (click)="atualizaTentativasJanela()">Atualizar Tentativas</button> -->
+  </div>
+</section>

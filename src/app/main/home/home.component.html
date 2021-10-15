@@ -1,0 +1,18 @@
+<section>
+  <div class="containerHome" fxLayout="column" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="5%" fxLayoutAlign="top center">
+    <div class="box" fxLayoutAlign="center center" fxLayout="column">
+      <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="5%" class="mat-display-1 treinadorName">
+        <label>{{treinador[0].nome}}</label>
+        <img class="clubLogo" src="{{treinador[0].clube.imagem}}" alt="">
+        <label>{{treinador[0].clube.name}}</label>
+        <label>{{treinador[0].valor}}e</label>
+      </div>
+    </div>
+    <div class="box" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="7%">
+      <button class="menuButton" type="submit" mat-raised-button (click)="goToClubeRoute()">Clube</button>
+      <button class="menuButton" type="submit" mat-raised-button (click)="goToMercadoRoute()">Mercado</button>
+      <button class="menuButton" type="submit" mat-raised-button (click)="goToAvendaRoute()">A venda</button>
+      <button class="menuButton" type="submit" mat-raised-button (click)="logOut()">Sair</button>
+    </div>
+  </div>
+</section>

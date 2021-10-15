@@ -1,0 +1,31 @@
+  <section>
+    <div class="containerHome" fxFlexFill fxLayout="column" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="5%" fxLayoutAlign="top center">
+      <div class="box" fxLayoutAlign="center center" fxLayout="column">
+        <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="5%" class="mat-display-1">
+          <label class="treinadorName">Lista de venda</label>
+          <!-- Card dos jogadores -->
+          <div *ngFor="let player of players" class="patrocinioCard" fxLayout="column" fxLayoutGap="7%">
+            <h2 class="mat-display-1 playerNameCard">{{player.common_name}}</h2>
+            <mat-divider></mat-divider>
+            <div fxLayout fxLayoutGap="5%">
+              <img class="playerFoto" src="{{player.last_name}}">
+              <div fxLayout="column">
+                <label class="atributePlayer">Overall: </label>
+                <label class="atributePlayer">Valor: </label>
+                <label class="atributePlayer">Posição: </label>
+              </div>
+              <div fxLayout="column">
+                <label class="atributePlayer">{{player.rating}}</label> 
+                <label class="atributePlayer">{{player.fut_wiz_id}}e</label>
+                <label class="atributePlayer">{{player.position}}</label>
+              </div>
+            </div>
+            <label class="atributePlayer">Salário do Jogador: {{player.club}}e</label>
+            <label class="atributePlayer">Contrato: {{player.total_stats_in_game}} temporada(s)</label>
+            <mat-divider></mat-divider>
+            <button mat-raised-button color="warn" (click)="comprarPlayer(player)">Comprar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

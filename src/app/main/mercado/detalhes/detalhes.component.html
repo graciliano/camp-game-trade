@@ -1,0 +1,28 @@
+<section>
+  <div class="containerHome" fxFlexFill fxLayout="column" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="5%" fxLayoutAlign="top center">
+    <div class="box" fxLayoutAlign="center center" fxLayout="column">
+      <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="5%" class="mat-display-1">
+        <label class="treinadorName">Detalhes Jogador</label>
+        <!-- Card dos jogadores -->
+        <div *ngFor="let player of player" class="patrocinioCard" fxLayout="column" fxLayoutGap="7%">
+          <h2 class="mat-display-1 playerNameCard">{{player.common_name}}</h2>
+          <mat-divider></mat-divider>
+          <div fxLayout fxLayoutGap="5%">
+            <img class="playerFoto" src="{{player.last_name}}">
+            <div fxLayout="column">
+              <label class="atributePlayer">Overall:</label> 
+              <label class="atributePlayer">Valor:</label>
+              <label class="atributePlayer">Salário:</label>
+            </div>
+            <div fxLayout="column">
+              <label class="atributePlayer">{{player.rating}}</label> 
+              <label class="atributePlayer">{{player.fut_wiz_id}} e</label>
+              <label class="atributePlayer">{{player.club}} e</label>
+            </div>
+          </div>
+          <button mat-raised-button color="warn" [disabled]="player?.total_stats || player?.traits.includes(treinador[0].id)" (click)="comprarPlayer(player)">Contratar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "camp-game-app": {
+      "hosting": {
+        "camp-trade": [
+          "camp-game-app"
+        ]
+      }
+    }
+  }
+}
